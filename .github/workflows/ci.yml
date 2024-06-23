@@ -15,6 +15,6 @@ jobs:
       
     - name: Build Docker image
       run: |
-        docker build -t docker.io/${{ secrets.DOCKER_USERNAME }}/my-portfolio-v2:${GITHUB_SHA::8} .
+        docker build -t docker.io/${{ secrets.DOCKER_USERNAME }}/my-portfolio-v2:latest .
         docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-        docker push docker.io/${{ secrets.DOCKER_USERNAME }}/my-portfolio-v2:${GITHUB_SHA::8}
+        docker push docker.io/${{ secrets.DOCKER_USERNAME }}/my-portfolio-v2:latest
